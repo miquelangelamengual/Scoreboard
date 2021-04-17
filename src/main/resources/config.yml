@@ -1,0 +1,11 @@
+FILE-RELOAD: "&aScoreboard Reloaded"
+SCOREBOARD:
+  ENABLED: true
+  TITLE: "Titulo"
+  LINES:
+    - ""
+    - "Linea 1"
+    - "Linea 2"
+    - "Linea 3"
+    - "Linea 4"
+    - ""
