@@ -29,6 +29,8 @@ public class Score extends JavaPlugin {
             this.scoreboard = new Scoreboard(this, new ScoreboardProvider());
             scoreboard.setTicks(2);
         }
+        
+        commandFramework.registerCommands(new ReloadCommand());
     }
 
     @Override
