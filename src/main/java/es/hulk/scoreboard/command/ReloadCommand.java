@@ -11,13 +11,13 @@ import org.bukkit.entity.Player;
 public class ReloadCommand extends BaseCommand {
 
     private FileConfig mainConfig = Score.get().getMainConfig();
+    private Score plugin;
 
-    @Command(name = "reloadscoreboard", permission = "scoreboard.command.reload")
-
+    @Command(name = "scoreboard.reload", permission = "scoreboard.command.reload")
     @Override
     public void onCommand(CommandArgs cmd) {
         Player player = cmd.getPlayer();
-        mainConfig.reload();
+        plugin.getMainConfig().reload();
         player.sendMessage(Utils.color(mainConfig.getString("FILE-RELOAD")));
     }
 }

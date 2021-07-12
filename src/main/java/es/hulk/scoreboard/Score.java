@@ -1,15 +1,18 @@
 package es.hulk.scoreboard;
 
+import es.hulk.scoreboard.command.ReloadCommand;
 import es.hulk.scoreboard.providers.ScoreboardProvider;
 import es.hulk.scoreboard.utils.FileConfig;
 import es.hulk.scoreboard.utils.command.CommandFramework;
 import es.hulk.scoreboard.utils.scoreboard.Scoreboard;
 import lombok.Getter;
 import lombok.Setter;
+import org.bukkit.command.defaults.ScoreboardCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Setter
 @Getter
+@SuppressWarnings("deprecation")
 public class Score extends JavaPlugin {
 
     private CommandFramework commandFramework;
@@ -31,6 +34,7 @@ public class Score extends JavaPlugin {
         }
         
         commandFramework.registerCommands(new ReloadCommand());
+        commandFramework.registerCommands(new ScoreboardCommand());
     }
 
     @Override
