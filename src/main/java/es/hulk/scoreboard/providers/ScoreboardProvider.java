@@ -25,7 +25,7 @@ public class ScoreboardProvider implements ScoreboardAdapter {
         final List<String> board = new ArrayList<String>();
 
         for (String s : mainConfig.getStringList("SCOREBOARD.LINES")) {
-            board.add(PlaceholderAPI.setPlaceholders(player, s));
+            board.add(PlaceholderAPI.setPlaceholders(player, s.replaceAll("<player>", player.getName())));
         }
         return board;
     }

@@ -18,6 +18,8 @@ public class ReloadCommand extends BaseCommand {
     public void onCommand(CommandArgs cmd) {
         Player player = cmd.getPlayer();
         plugin.getMainConfig().reload();
+        plugin.getScoreboard().cleanup();
+        plugin.getScoreboard().setup();
         player.sendMessage(Utils.color(mainConfig.getString("FILE-RELOAD")));
     }
 }
