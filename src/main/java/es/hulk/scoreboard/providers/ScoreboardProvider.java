@@ -1,6 +1,6 @@
 package es.hulk.scoreboard.providers;
 
-import es.hulk.scoreboard.Score;
+import es.hulk.scoreboard.Scoreboard;
 import es.hulk.scoreboard.utils.FileConfig;
 import es.hulk.scoreboard.utils.Utils;
 import es.hulk.scoreboard.utils.scoreboard.ScoreboardAdapter;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ScoreboardProvider implements ScoreboardAdapter {
 
-    private final FileConfig mainConfig = Score.get().getMainConfig();
+    private final FileConfig mainConfig = Scoreboard.get().getMainConfig();
 
     @Override
     public String getTitle(Player player) {

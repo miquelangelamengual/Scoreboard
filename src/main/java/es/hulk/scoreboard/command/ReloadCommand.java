@@ -1,7 +1,6 @@
 package es.hulk.scoreboard.command;
 
-import es.hulk.scoreboard.Score;
-import es.hulk.scoreboard.utils.FileConfig;
+import es.hulk.scoreboard.Scoreboard;
 import es.hulk.scoreboard.utils.Utils;
 import es.hulk.scoreboard.utils.command.BaseCommand;
 import es.hulk.scoreboard.utils.command.Command;
@@ -10,16 +9,13 @@ import org.bukkit.entity.Player;
 
 public class ReloadCommand extends BaseCommand {
 
-    private FileConfig mainConfig = Score.get().getMainConfig();
-    private Score plugin;
+    private Scoreboard plugin = Scoreboard.getInstance();
 
     @Command(name = "scoreboard.reload", permission = "scoreboard.command.reload")
     @Override
     public void onCommand(CommandArgs cmd) {
         Player player = cmd.getPlayer();
         plugin.getMainConfig().reload();
-        plugin.getScoreboard().cleanup();
-        plugin.getScoreboard().setup();
-        player.sendMessage(Utils.color(mainConfig.getString("FILE-RELOAD")));
+        player.sendMessage(Utils.color(plugin.getMainConfig().getString("FILE-RELOAD")));
     }
 }

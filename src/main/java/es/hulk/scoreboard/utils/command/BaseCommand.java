@@ -1,6 +1,6 @@
 package es.hulk.scoreboard.utils.command;
 
-import es.hulk.scoreboard.Score;
+import es.hulk.scoreboard.Scoreboard;
 
 /**
  * The type Base command.
@@ -10,7 +10,7 @@ public abstract class BaseCommand {
     /**
      * The Plugin.
      */
-    public Score plugin = Score.getInstance();
+    public Scoreboard plugin = Scoreboard.getInstance();
 
     /**
      * Instantiates a new Base command.
