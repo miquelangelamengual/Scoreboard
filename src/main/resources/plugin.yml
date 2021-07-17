@@ -1,4 +1,4 @@
 name: Scoreboard
 author: Hulk
-main: es.hulk.scoreboard.Score
-version: 1.0
+main: es.hulk.scoreboard.Scoreboard
+version: 2.0
