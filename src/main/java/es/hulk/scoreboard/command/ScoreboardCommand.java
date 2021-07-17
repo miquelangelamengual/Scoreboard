@@ -6,7 +6,7 @@ import es.hulk.scoreboard.utils.command.Command;
 import es.hulk.scoreboard.utils.command.CommandArgs;
 import org.bukkit.entity.Player;
 
-public class ScorboardCommand extends BaseCommand {
+public class ScoreboardCommand extends BaseCommand {
 
     @Command(name = "scoreboard")
     @Override
