@@ -27,7 +27,12 @@ public class ScoreboardProvider implements ScoreboardAdapter {
         for (String s : mainConfig.getStringList("SCOREBOARD.LINES")) {
             board.add(PlaceholderAPI.setPlaceholders(player, s.replaceAll("<player>", player.getName())));
         }
-        return board;
+
+        if (Scoreboard.get().isPlaceholderAPI()) {
+            return PlaceholderAPI.setPlaceholders(player, board);
+        } else {
+            return board;
+        }
     }
 
     @Override
